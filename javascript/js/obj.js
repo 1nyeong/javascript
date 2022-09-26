@@ -4,19 +4,43 @@ const button = document.querySelector("button");
 /* validStatus 배열에 각각 false으로 설정 */
 let validStatus = [false, false, false, false, false];
 
+let inputObjects = new Array();
+
 /* 버튼을 클릭했을때 */
 
 button.onclick = () => {
 
+    /* 사용자 객체 */
+    /* 생성과 동시에 정리 */
+
+    inputs.forEach((input, index) => {
+
+        let test = 10;
+
+        let inputObj = {
+            value: input.value,
+            placeholder: input.placeholder,
+            print: () => {
+                console.log(inputObj.placeholder + "print 메소드 실행");
+            },
+            "test": test
+        }
+        inputObjects.push(inputObj);
+
+        validStatus[index] = !inputIsEmpty(input.value);
+    })
+    
+    console.log(inputObjects);
+
+
     /* inputs.forEach(반복)로 validStatus 값을 대입해준다.
     이때 inputIsEmpty에 not(!)을 붙여준다 (기본값이 true)
     validStatus값이 정리가 된다.*/
-    inputs.foEach((input, index) => {
+    inputs.forEach((input, index) => {
         validStatus[index] = !inputIsEmpty(input.value)
     });
 
     /* 검사 완료 값 
-
     모든 validStatus 값이 true가 되면 
     includes가 true가 된다?..
     (한마디로 하나의 다른 값을 찾는다)
@@ -34,6 +58,7 @@ button.onclick = () => {
                 break; /* 여러번 뜨지않게 break*/
             }
         }
+
         /* for 값이 전부 true일때 다음 */
     }else{ /* 전부 true 값일때 alert 실행*/
         alert("검사 완료");
