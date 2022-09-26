@@ -46,7 +46,7 @@ button.onclick = () => {
     (한마디로 하나의 다른 값을 찾는다)
 
     includes 정의
-    메서드를 사용해 문자열 내에 찾고자 하는 다른 문자열이 있는지 확인할 수 있습니다.*/
+    메서드를 사용해 문자열 내에 찾고자 하는 다른 문자열이 있는지 확인할 수 있다.*/
     if(validStatus.includes(false)){ 
 
         /* vaildStatus를 for문으로 값을 올려준다 */
