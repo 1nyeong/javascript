@@ -20,7 +20,7 @@ function addUser(){
         phone: inputs[2].value
     }
 
-    //유저를 담아둔다
+    //추가된 유저를 담아둔다
     userList.push(user);
 }
 
